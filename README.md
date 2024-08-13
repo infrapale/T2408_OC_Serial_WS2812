@@ -23,9 +23,22 @@ All signal seems to handle the 115200 bps quite well
 ![74HC07 Circuit](/images/U2U_RGB_RST.png)
 
 ### Test Results
-![Serial Transistor Results](/images/20240813-P8130281.jpg)
+![74HC07 Results](/images/20240813-P8130281.jpg)
 
 The rising edge is sligtly worse than with the transistor solution but is still accepted by the receiving MCU 1. The 115200 is the absolute max bitrate used as basis for the design. 
+
+## Bonus Feature
+
+The 74HC07 IC can also be used for:
+* Level shifter for WS2812 (RGB LED) 
+* Reset output for connected MCU's or sensors
+
+### Driving WS2812 LED strips
+
+THe voltage level shift is implemented using a pullup resistor connected to 5 Volts. The data rate is high and some previous attempts to make a level shifter did not work out satisfactory.
+
+![WS2812 data](/images/20240813-P8130285.jpg)
+
 
 
 
