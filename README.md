@@ -3,21 +3,20 @@
 System level documentation of my open-drain MCU interconnection UART to UART communication and WS2812 Interface.
 
 I have been using the open drain interface to connect multiple MCU's to the same lines. The circuit can also adapt between 3.3V and 5V. 
-
+---
 ## Topology
 
 ### Single Main 2 Line
-![Single Main](/images/SingleMain-2-Line)
+![Single Main](/images/SingleMain-2-Line.png)
 
 ### All 2 All 1 Line
-![All 2 All](/images/All2All-1-Line)
-
+![All 2 All](/images/All2All-1-Line.png)
+---
 ## Test Setup
 
-![Test Setup](/images/U2U_Testt_Setup.png)
+![Test Setup](/images/U2U_Test_Setup.png)
 
 MCU 1 is continiously send 0xAA to MCU 2. MCU 2 is echoing the received code back to MCU 1.  I have used the bitrate 115200 bps for the stress test. 
-
 
 ### MCU 1 Micropython Code
 ```
@@ -54,7 +53,7 @@ void loop() {
   }
 }
 ```
-
+---
 
 ## Legacy Transistor Solution
 I have used NPN transistors in my old solutions. With appropriate transistors and resistors this solution can support at least bit rtes up to 115200 bps. The drawback is that it requires quite many discrete components.
@@ -76,7 +75,7 @@ All signal seems to handle the 115200 bps quite well
 
 The 74HC07 IC is an open drain non-inverting buffer which is perfect for my needs here
 
-![74HC07 IC](/images/74HC07.png)
+![74HC07 IC](/images/74HC07.jpg)
 
 
 ### 74HC07 Circuit
@@ -88,7 +87,7 @@ The 74HC07 IC is an open drain non-inverting buffer which is perfect for my need
 ![74HC07 Results](/images/20240813-P8130281.jpg)
 
 The rising edge is sligtly worse than with the transistor solution but is still accepted by the receiving MCU 1. The 115200 is the absolute max bitrate used as basis for the design. 
-
+---
 ## Bonus Feature
 
 The 74HC07 IC can also be used for:
@@ -104,8 +103,4 @@ THe voltage level shift is implemented using a pullup resistor connected to 5 Vo
 *Magenta Level shifted signal to the LED strip
 
 
-
-
-
-* https://github.com/infrapale/T2401_LightControl
 
