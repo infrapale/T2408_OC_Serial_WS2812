@@ -98,6 +98,8 @@ The 74HC07 IC can also be used for:
 
 THe voltage level shift is implemented using a pullup resistor connected to 5 Volts. The data rate (800 kHz) is high and some previous attempts to make a level shifter did not work out satisfactory.
 
+![RGB Level Shifter](/images/WS2812_Level_Shifter.png)
+
 ![WS2812 data](/images/20240813-P8130285.jpg)
 *Yellow MCU output pin
 *Magenta Level shifted signal to the LED strip
